@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial scale=1">
+        <link rel="stylesheet" href="main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Open+Sans:wght@300&display=swap" rel="stylesheet">        
+        <title>PegolEat: Your local recipe searcher.</title>
+        <!-- <script src="testscript.js" defer></script> -->
+        <script src="main.js" defer></script>
+
+    </head>
+    <body class>
+        <header>
+            <div id="Title-header">
+                <p class="master-title">PegolEat: Your local recipe searcher.</p>
+            </div>
+        </header>
+        <div id="segments">
+            <div id="segment1">
+                <div id="column1">
+
+                    <p class="segment-title">1. ingredients searcher</p>
+
+    
+                    <p class="details">choose ingredients<br>
+                    that are available to you</p>
+    
+                    <div id="module1-1">
+                        <input id="indg-search">
+                        <div id="ingredient-checkbox-container" class="checkbox-container">
+                            <form id="ingredient-checkbox">
+                                <p id="ingredient-checkbox-hook"style="visibility: hidden; height: 1px; margin: 1px"></p>
+                            </form>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <div id="column2">
+
+                    <p class="segment-title">2. Matched recipes</p>
+
+    
+                    <p class="details">choose recipes<br>
+                    that you would like to prepare from selected ingredients
+                    </p>
+    
+                    <div id="module1-2">
+                        
+                        <div id="matched-recipes-checkbox-container" class="checkbox-container">
+                            <form id="recipes-checkbox">
+                                <p id="recipes-checkbox-hook"style="visibility: hidden; height: 1px; margin: 1px"></p>
+                            </form>
+                        </div>
+                        <div>
+    
+                        </div>
+                    </div>
+    
+                </div >
+            </div>
+
+
+
+            <div id="segment2">
+                <p class="segment-title" style="margin-left: 1rem;">Chosen recipes</p>
+                <p class="details" style="margin-left: 1rem;">verify selected recipes <br>
+                and generate the shopping list below.
+                </p>
+                <div id="module2-2">
+                    <button id="generate-csv"><a id="generate-csv-anchor" download="Your_new_shopping_list.csv" href="#" >Generate your shopping list.</a></button>
+                </div>
+                <div id="module2-1">
+                    <div class="selected-recipes-container">
+                        <div id="selected-recipes">
+                            <span id="recipes-selected-hook"style="visibility: hidden; height: 1px; margin: 1px"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </body>
+</html>

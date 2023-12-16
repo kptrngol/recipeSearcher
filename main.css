@@ -1,0 +1,190 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: medium;
+    background-color: darkslategray;
+    color: whitesmoke;
+}
+
+#Title-header {
+    display: flex;
+    border-style: solid;
+    border-color: wheat;
+    border-width: 0.1rem;
+    border-radius: 25px;
+    color: wheat;
+    justify-content: left;
+    align-items: center;
+    height: 3rem;
+}
+.master-title {
+    font-family: "Amatic SC";
+    font-size: xx-large;
+    margin-left: 1rem;
+}
+
+.segment-title {
+    font-family: "Amatic SC";
+    font-size: xx-large;
+    margin-top: 1rem;;
+    margin-bottom: 1rem;
+
+}
+.details {
+    font-family: "Open Sans", sans-serif;
+    font-size: medium;
+}
+
+#segment1 {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: space-around;
+    height: 68vh;
+    width: 98vw;
+    overflow: auto;
+
+}
+#segment2 {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+    height: 32%;
+    width: 98vw;
+}
+#column1 {
+    display: flex;
+    flex-direction: column;
+    width: 32vw;
+    height: inherit;
+
+}
+#column2 {
+    display: flex;
+    flex-direction: column;
+    width: 62vw;
+    height: inherit;
+}
+#module1-1 {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+}
+#module1-2 {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+}
+
+#indg-search {
+    height: 1vh;
+    font-family: "Open Sans", sans-serif;
+    margin: 0.5rem;
+}
+
+#ingredient-checkbox {
+    overflow-y: scroll;
+    height: inherit;
+    color: darkslategray;
+    background-color: wheat;
+    /* background-image: url("foka1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    
+}
+.indg-in{
+    width: 2vw;
+}
+
+.indg-lb{
+    font-family: "Open Sans", sans-serif;
+    padding: 0.5vh;
+}
+
+.recipe-in {
+    width: 2vw;
+}
+.recipe-lb{
+    font-family: "Open Sans", sans-serif;
+    padding: 0.5vh;
+}
+#ingredient-checkbox-container{
+    height: 48vh;
+}
+#matched-recipes-checkbox-container{
+    height: inherit;
+    height: 48vh;
+}
+
+#recipes-checkbox {
+    overflow: auto;
+    height: inherit;
+}
+
+#module2-1{
+    height: 28vh;
+    display: flex;
+    flex-direction: row;
+}
+#module2-2{
+    height: 1rem;
+    margin-top: 0.05rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#selected-recipes {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+#generate-csv {
+    font-family: "Open Sans", sans-serif;
+    background-color: transparent;
+    color: wheat;
+    border-width: 0.05rem;
+    
+}
+
+.recipe-card {
+    overflow: auto;
+    color: black;
+    background-color: wheat;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.01rem;
+    height: 5rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    font-family: "Open Sans", sans-serif;
+}
+.inner-recipe-card-content {
+    height: 70%;
+    width: 70%;
+    color: red;
+    margin: 1rem;
+
+}
+
+#selected-recipes{
+    overflow-y: auto;
+}
+
+.selected-recipe-card {
+    width: 100%;
+    overflow: auto;
+    color: black;
+    background-color: wheat;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.01rem;
+    font-family: "Open Sans", sans-serif;
+    margin: 1rem;
+}
+
+
+
