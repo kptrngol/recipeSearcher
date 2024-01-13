@@ -1,5 +1,5 @@
 "use strict"
-//---INGREDIENTS SEARCHER---
+
 const ingredientsPool = [
     "makaron","oliwa","tofu","cebula","czosnek","marchew","seler","bazylia","płatki drożdżowe","peperoncino","ryż","cukinia","cynamon","papryka","gorzka czekolada","sos sojowy","pieprz","sól","mięta","pietruszka","bułki do burgera","mięso wegańskie:kotlet","ser mimolette","sałata","ketchup","sos BBQ","majonez","ogórek","pomidor","chlebpita","mięso wegańskie:gyros","jogurtgrecki","ziemniaki","marchewka","groszek","masło","cukier","warzywa chińskie z biedronki","olej","serek wiejski","twaróg","ogórki konserwowe"
 ].sort();
@@ -7,7 +7,7 @@ const ingredientsPool = [
 const ingredientsPoolNodes = ingredientsPoolInitialize();
 
 function ingredientsPoolInitialize (){
-    const ingredientsPoolNodesInternal = []
+    const ingredientsPoolNodesInternal = [];
     for (const el of ingredientsPool) {
     const newElName = `${el}-select`
     const newEl = `<div id="${`${el}-select`}" style="visibility: visible;"><input type="checkbox" if="check-${el}" value="${el}" class="indg-in"><label for="check-${el}" class="indg-lb">${el}</label></div>`
@@ -18,9 +18,8 @@ function ingredientsPoolInitialize (){
 }
 
 document.querySelector("#indg-search").addEventListener("input",()=> {
-    //we download search value 
+
     let ingredientSearcherValue = document.querySelector("#indg-search").value.toLowerCase();
-    //we download existing elements to compare it later (ingredientsPoolNodes)
 
     if (ingredientSearcherValue == 0) {
         for (const el of ingredientsPoolNodes) {
@@ -28,7 +27,7 @@ document.querySelector("#indg-search").addEventListener("input",()=> {
         }
     } else {
         for (const el of ingredientsPoolNodes) {
-    //we iterate ingredients array and create the new one only with values that match
+
             if (el.startsWith(ingredientSearcherValue)){
                 let hook = document.getElementById("ingredient-checkbox-hook")
                 document.getElementById(`${el}`).style["visibility"] = "visible";
@@ -43,12 +42,6 @@ document.querySelector("#indg-search").addEventListener("input",()=> {
     }
 }
 )
-
-
-// -checked ingredients list-
-//* tworzymy listę która klarownie pokazuje wybrane składniki z opcją usunięcia ich co automatycznie zmienia wartość w formie powyżej - nie powinno to być trudne (sprawdizć czy będzie zmieniał się powyższy array)
-
-
 
 //---MATCHED RECIPES---
 class Recipe {
@@ -145,7 +138,7 @@ const AglioOlioPeperoncino = new Recipe(
     {1: "Gotujemy wodę na makaron", 2:"Rogrzewamy oliwę na patelni.", 3:"Rozdrabniamy tofu w palcach tak, żeby przypominało w wyglądzie mięso mielone.",4:"Siekamy cebulę i czosnek, kroimy marchewkę na plasterki, a następnie na ćwiartki. Jeśli dodajemy selera, kroimy go w cieniutkie plasterki.",5:"Gotujemy makaron zgodnie z instrukcją na opakowaniu.",6:"Na oliwie podsmażamy cebulę (ok. 3-4 minuty), następnie dodajemy czosnek i smażymy jeszcze ok. 2 minuty mieszając. Dodajemy marchewkę i selera. Smażymy następne 2 minuty.",7:"Dorzucamy tofu i smażymy przez ok. 5 minut.",8:"Dodajemy pomidory i przyprawiamy do smaku (jeśli używamy świeżej bazylii siekamy ją i dodajemy na sam koniec gotowania). Smażymy do uzyskania odpowiedniej konsystencji, czyli gdy woda wyparuje i sos zgęstnieje (ok. 10-15 minut w zależności od rodzaju passaty).",9:"Mieszamy sos z makaronem w garnku lub bezpośrednio na talerzu. Możemy posypać wegańskim parmezanem lub płatkami drożdżowymi."},
     ["makaron","oliwa","czosnek","peperoncino","pieprz","sól"],
     ["Czas przygotowania: 15 min"]
-    );    //jeżeli wpisuję prompt to sprawdza wszystkie słowa - jeżeli litery się zgadzają to pokazuje je do dodania
+    );
 
 const recipeList = [Tofunese,AglioOlioPeperoncino,Leczo,PastazCukinią,GzikazZiemniakami,WarzywaPoChińskuzBiedry,KotletiMarchewkazGroszkiem,Gyros,Burgery
 ];
@@ -199,8 +192,6 @@ this.addEventListener("load", () => {
 
 })
 
-
-//listening to selected inputs
 const selectedIngredients = []
 this.addEventListener("load", () => {
     const group = document.querySelector("#ingredient-checkbox");
@@ -216,14 +207,12 @@ this.addEventListener("load", () => {
                 selectedIngredients.splice(elInd,1);
             } else {
             }
-            // if el is changed we should check if ingredients are present in recipe ing properties
 
 
             for (const el of recipeList) {
                 document.getElementById(`${el.elname}-select`).style["visibility"] = "hidden"
             }
 
-            //iterate through recipes to set up the begining state 
 
             for (const ele of recipeList) {
                 resetStatus ()
@@ -234,7 +223,6 @@ this.addEventListener("load", () => {
                 }
 
             }
-
 
 
             for (const ing of selectedIngredients) {
@@ -273,37 +261,7 @@ this.addEventListener("load", () => {
                 }
 
             }
-
-            // el.presentIng = [];
-            // el.neededIng = [];
-
-            // // we check which ings we have  
-            // for (const ing of selectedIngredients) {
-            //     for (const el of recipeList) {
-            //         console.log("hej")
-            //         check()
-            //         function check () {
-            //                 if (el.ingredientsStatus[ing]) {
-            //                     el.presentIng.push(ing);
-            //                 }
-            //         }
-            //     }
-
-            // }
-
-            // // we update list of ings we do not have
-            // for (const el of recipeList) {
-            //     for (const recIng of el.ingredientsStatus) {
-            //         if (!el.ingredientsStatus[recIng]){
-            //             el.neededIng.push(recIng)
-            //         }
-            //     }
-            // }
-
-
-
-            
-            
+     
 
             for (const el of recipeList) {
                 console.log("in");
@@ -316,7 +274,7 @@ this.addEventListener("load", () => {
         })
     }
 })
-let newURL = ""
+let newURL = "";
 
 
 document.querySelector("#generate-csv").addEventListener("click",()=>{
@@ -339,38 +297,4 @@ document.querySelector("#generate-csv").addEventListener("click",()=>{
 
 }
 )
-
-
-
-// document.querySelector("#CSV-generator").addEventListener("click",()=>{
-//     console.log("click");
-//     const CsvArray = []
-
-//     const weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-//     const weekDayIds = ["#mon-activ","#tue-activ","#wed-activ","#thu-activ", "#fri-activ", "#sat-activ", "#sun-activ"]
-    
-//     generateCsvArray (0, 7);
-
-//     let csvContent = "";
-
-//     CsvArray.forEach(row => {
-//         csvContent += row.join(",") + "\n";
-//     })
-
-//     const blob = new Blob ([csvContent], {type: "text/csv;charset=utf-8," })
-//     const objUrl = URL.createObjectURL(blob);
-//     document.querySelector("#CSV-anchor").setAttribute("href", objUrl)
-
-//     function generateCsvArray (n, i) {
-//         if (n === i) {
-//             return;
-//         } else {
-//             CsvArray.push([weekDays[n], document.querySelector(weekDayIds[n]).innerText])
-//             generateCsvArray(n+1, i);
-//             return CsvArray;
-//         }
-//     }
-
-
-// })
 
